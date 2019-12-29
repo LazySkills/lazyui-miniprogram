@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "iconfont": "./iconfont/iconfont",
+    "tabbar": "./tabbar/tabbar"
+  }
+}

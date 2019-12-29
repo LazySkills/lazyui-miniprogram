@@ -1,0 +1,4 @@
+@import "/iconfont.wxss";
+.iconfont {
+  font-size: inherit
+}

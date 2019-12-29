@@ -1,0 +1,39 @@
+{
+  "name": "lazyui-miniprogram",
+  "version": "0.0.4",
+  "description": "A simple and practical miniprogram-tabbar package",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "gulp dev --develop",
+    "watch": "gulp watch --develop --watch",
+    "build": "gulp",
+    "dist": "npm run build",
+    "clean-dev": "gulp clean --develop",
+    "clean": "gulp clean",
+    "test": "jest --bail",
+    "test-debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --bail",
+    "coverage": "jest ./test/* --coverage --bail",
+    "lint": "eslint \"src/**/*.js\" --fix",
+    "lint-tools": "eslint \"tools/**/*.js\" --rule \"import/no-extraneous-dependencies: false\" --fix"
+  },
+  "miniprogram": "src",
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testURL": "https://jest.test",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LazySkills/lazyui-miniprogram.git"
+  },
+  "author": "lazyskills <china_wangyu@aliyun.com>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
