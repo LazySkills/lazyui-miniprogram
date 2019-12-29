@@ -22,22 +22,42 @@ Component({
   },
   lifetimes: {
     attached: function () {
+      this.initTabBarData()
+      this.setData({
+        selected: this.getSelecTabbarIndex()
+      })
+    }
+  },
+  methods: {
+    initTabBarData(){
       if (Object.keys(tabBar).length == 0) {
         console.log("请在根目录下建立并配置'tabBar.js'文件,内容见：https://www.npmjs.com/package/lazyui-miniprogram")
       }else{
         this.setData(tabBar)
       }
-    }
-  },
-  methods: {
+    },
+    setSelectTabbarIndex(index) {
+      try {
+        wx.setStorageSync('tabbar.selected', index)
+      } catch (e) {}
+    },
+    getSelecTabbarIndex() {
+      try {
+        var value = wx.getStorageSync('tabbar.selected')
+        if (value) {
+          return value
+        }
+      } catch (e) {
+        
+      }
+      return 0
+    },
     switchTab(e) {
       const data = e.currentTarget.dataset
       const url = data.path
+      this.setSelectTabbarIndex(data.index)
       wx.switchTab({
         url
-      })
-      this.setData({
-        selected: data.index
       })
       wx.navigateTo({
         url: data.path,
