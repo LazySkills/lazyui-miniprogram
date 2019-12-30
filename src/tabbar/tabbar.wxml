@@ -1,7 +1,7 @@
 <cover-view class="tab-bar">
     <cover-view class="tab-bar-border"></cover-view>
     <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
-        <iconfont icon="{{item.iconPath}}" color="{{selected === index ? selectedColor : this.color}}" size="{{size}}"></iconfont>
-        <cover-view style="color: {{selected === index ? selectedColor : this.color}}">{{item.text}}</cover-view>
+        <iconfont icon="{{item.iconPath}}" color="{{selected === index ? selectedColor : color}}" size="{{size}}"></iconfont>
+        <cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
     </cover-view>
 </cover-view>

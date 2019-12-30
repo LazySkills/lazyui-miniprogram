@@ -33,6 +33,9 @@ Component({
       if (Object.keys(tabBar).length == 0) {
         console.log("请在根目录下建立并配置'tabBar.js'文件,内容见：https://www.npmjs.com/package/lazyui-miniprogram")
       }else{
+        if (Object.keys(tabBar.list).length > 5 || Object.keys(tabBar.list).length == 0){
+          console.error("`tabBar.js`配置中`list`选项应该为1-5个集合,你给的是"+Object.keys(tabBar.list).length)
+        }
         this.setData(tabBar)
       }
     },
@@ -59,9 +62,18 @@ Component({
       wx.switchTab({
         url
       })
-      wx.navigateTo({
-        url: data.path,
-      })
+      if (this.getCurrentPageUrl() !== data.path){
+        wx.navigateTo({
+          url: data.path,
+        })
+      }
+      
+    },
+    getCurrentPageUrl() {
+      const pages = getCurrentPages()
+      const currentPage = pages[pages.length - 1]
+      const url = `/${currentPage.route}`
+      return url
     }
   }
 })
