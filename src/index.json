@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "iconfont": "./iconfont/iconfont",
-    "tabbar": "./tabbar/tabbar"
+    "tabbar": "./tabbar/tabbar",
+    "swiper": "./move-swiper/index"
   }
 }
