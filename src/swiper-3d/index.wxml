@@ -1,0 +1,35 @@
+<!--miniprogram_npm/lazyui-miniprogram/move-swiper/index.wxml-->
+<view class='fc_wrapper' style="height:{{swiperH}}">
+  <swiper display-multiple-items='1' circular previous-margin='50px' next-margin='50px' bindchange='change' current='{{current}}' indicator-dots="true">
+    <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
+      <swiper-item>
+        <!--大容器-->
+        <!-- <view class = "fc_wrapper"> -->
+          <!--实现容器翻转-->
+          <view class = "fc_inner" style="transform: translateY({{index == current? activePT : 0}})">
+            <!--正面-->
+            <view class = "side fc_front" data-index='{{index}}' animation="{{index == current?animationData:animationData2}}">
+                <image src='{{item}}'></image>
+                <view class='content'>
+                  <text>《阿丽塔 · 战斗天使》</text>
+                  <text>·20180521·</text>
+                </view>
+            </view>
+            <!--反面-->
+            <view class = "side fc_back"  data-index='{{index}}' animation="{{index == current?animationData:animationData2}}">
+              
+                <image src='{{item}}'></image>
+                <view class='content'>
+                  <text>《阿丽塔 · 刺激战场》</text>
+                  <text>·20190021·</text>
+                </view>
+            </view>
+          </view>
+        <!-- </view>       -->
+        
+      
+      </swiper-item>
+    </block>
+  </swiper>
+  
+</view>

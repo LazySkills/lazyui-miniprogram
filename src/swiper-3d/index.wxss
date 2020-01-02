@@ -1,0 +1,72 @@
+swiper{
+  width: 100%;
+  height: 100%
+}
+
+swiper-item image{
+  width: 100%;
+  height: 100%
+}
+
+.fc_wrapper{
+  display: flex;
+  width: 100%;
+}
+
+.fc_inner{
+  display: flex;
+  width:100%;
+  height:100%;
+  perspective:1000px;
+
+}
+
+.side{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position:absolute;
+  left:0;
+  top:0;
+  overflow: hidden;
+  padding: 20rpx 0 20rpx 20rpx;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform-origin: center center;
+  transition:transform 0.8s;
+}
+
+.fc_front{
+  z-index: 4;
+  backface-visibility: hidden;
+}
+
+.fc_back{
+  z-index: 4;
+  transform-origin: center center;
+  transform: rotateY(180deg) ;
+  backface-visibility: hidden;
+}
+
+.fc_front img,.fc_back img{
+  width:100%;
+  height:100%;
+}
+
+.fc_inner:active .side{
+  transform: rotateY(360deg) translateZ(0);
+}
+
+.content{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #fff;
+  padding-bottom: 40rpx;
+  justify-content: center;
+  align-items: center;
+}

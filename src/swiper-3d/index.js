@@ -12,8 +12,8 @@ Component({
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
-      this.stretch(350)
-      this.shrink(300)
+      this.stretch("100%")
+      this.shrink("95%")
     },
   },
   /**
@@ -30,7 +30,8 @@ Component({
     swiperIndex: 0,
     current: 0,
     animationData: {},
-    animationData2: {}
+    animationData2: {},
+    activePT: "-20rpx"
   },
 
   /**
@@ -39,11 +40,11 @@ Component({
   methods: {
     change(e) {
       this.setData({
-        current: e.detail.current
+        current: e.detail.current,
       })
-      this.stretch(350)
+      this.stretch("100%")
 
-      this.shrink(300)
+      this.shrink("95%")
     },
     // 收缩
     stretch(h) {
