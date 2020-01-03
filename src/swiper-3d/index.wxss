@@ -9,7 +9,7 @@ swiper-item image{
 }
 
 .fc_wrapper{
-  display: flex;
+  display: block;
   width: 100%;
 }
 
@@ -53,9 +53,14 @@ swiper-item image{
   height:100%;
 }
 
-.fc_inner:active .side{
+.fc_inner:hover .side{
   transform: rotateY(360deg) translateZ(0);
 }
+
+.fc_inner:hover::after .side{
+  opacity: .3c
+}
+
 
 .content{
   position: absolute;
@@ -69,4 +74,24 @@ swiper-item image{
   padding-bottom: 40rpx;
   justify-content: center;
   align-items: center;
+  text-align: center
+}
+
+.score{
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  color: #fff;
+  padding: 40rpx;
+  z-index: 5;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  font-weight: 700
+}
+
+.score text{
+  padding-right: 8rpx;
 }
