@@ -1,6 +1,6 @@
 {
   "name": "lazyui-miniprogram",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A simple and practical miniprogram-tabbar package",
   "main": "src/index.js",
   "scripts": {
