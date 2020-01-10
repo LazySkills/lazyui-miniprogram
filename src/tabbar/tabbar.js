@@ -6,19 +6,27 @@ Component({
 
   data: {
     selected: 0,
-    color: "#7A7E83",
-    size: "45rpx",
-    selectedColor: "#3cc51f",
-    list: [{
-      pagePath: "/pages/index/index",
-      iconPath: "iconxingqiu",
-      text: "组件"
-    }, {
-      pagePath: "/pages/logs/logs",
-      iconPath: "iconredu",
-      selectedIconColor: "iconredu",
-      text: "接口"
-    }]
+    color: "#ccc",
+    size: "50rpx",
+    weight: "bolder",
+    selectedColor: "#ffcace",
+    list: [
+      {
+        pagePath: "/pages/index/index",
+        iconPath: "icontarget",
+        text: "最新"
+      }, 
+      {
+        pagePath: "/pages/logs/logs",
+        iconPath: "iconballoons",
+        text: "热门"
+      },
+      {
+        pagePath: "/pages/user/index",
+        iconPath: "iconin-love",
+        text: "我的"
+      }
+    ]
   },
   lifetimes: {
     attached: function () {
